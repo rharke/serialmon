@@ -1,0 +1,11 @@
+[Unit]
+Description=Serial monitor
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/serial/serialmon/serialmon.py /home/serial/serialmon/config.yml
+User=serial
+
+[Install]
+WantedBy=multi-user.target

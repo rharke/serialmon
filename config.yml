@@ -1,0 +1,24 @@
+#
+# Configuration options:
+#  serial:
+#   port (string): Serial port to monitor. On Linux, this would be /dev/ttysomething. On Windows,
+#    it's probably COM1, COM2, or something like that.
+#   baudrate (int, default=9600): Baud rate for the serial link.
+#   bytesize (int, default=8): Data bits.
+#   parity (N/E/O/M/S, default=N): Parity.
+#   stopbits (1/1.5/2, default=1): Stop bits.
+#   xonxoff (bool, default=False): Use software flow control.
+#   rtscts (bool, default=False): Use hardware RTS/CTS flow control.
+#   dsrdtr (bool, default=False): Use hardware DSR/DTR flow control.
+#   exclusive (bool, default=None): Open port for exclusive access.
+#  charset (string, default=ascii): Character set to interpret serial data with.
+#  triggers (dict of str:str or str:list): Mapping defining strings to listen for and commands to
+#   run when they are encountered. The value for each mapping is the command and arguments as a
+#   list. If it's just a string, it's treated as a command with no arguments.
+#
+
+serial:
+  port: /dev/ttyAMA0
+  baudrate: 115200
+triggers:
+  'Play chime': /home/serial/serialmon/chime.sh
